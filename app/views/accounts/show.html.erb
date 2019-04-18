@@ -1,2 +1,41 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<%= form_for @accounts, url: accounts_show_path do |f| %>
+<div class="container">
+  <h1>Profile Detail</h1>
+  <div class = "row">
+    <div class = "col-lg-6">
+      <div class="form-group">
+        <%= f.label :Name%><br/>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+  </div>
+  
+<div class="form-group", text_color="white">
+    <div class = "row">
+      <div class = "col-lg-6">
+        <%= f.label :Phone_No %><em> (Default contry is India)</em><br />
+        <%= f.text_field :phone %>
+      </div>
+    </div>
+  </div>
+    <div class = "row">
+      <div class = "col-lg-6">
+        <div class="form-group">
+          <%= f.label :DOB %><br/>
+          <%= f.text_field :dob %>
+        </div>
+      </div>
+  </div>
+    <div class = "row">
+      <div class = "col-lg-6">
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+  </div>
+  <div class="btn btn-outline-primary", style="color: white">
+    <%= link_to 'Sign_out', destroy_user_session_path, method: :delete %>
+  </div>
+  </div>
+<% end %>
