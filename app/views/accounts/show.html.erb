@@ -1,3 +1,4 @@
+<%= render file: '_navbar' %>
 <%= form_for @accounts, url: accounts_show_path do |f| %>
 <div class="container">
   <h1>Profile Detail</h1>
@@ -34,9 +35,7 @@
         </div>
       </div>
   </div>
-  <div class="btn btn-outline-primary", style="color: white">
-    <%= link_to 'Sign_out', destroy_user_session_path, method: :delete %>
-  </div>
-  <%= link_to 'Home', root_path%>
+    <%= link_to 'Sign_out', destroy_user_session_path, method: :delete, :class => "btn btn-primary" %>
+  <%= link_to 'Home', root_path, :class => "btn btn-primary" %>
   </div>
 <% end %>
