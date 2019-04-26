@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  scope :admin do
+  resources :admin
+  end
   get 'accounts/show'
   devise_for :users#, controllers: {sessions: 'users/sessions'}
   root to: "home#index"
